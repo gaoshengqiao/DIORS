@@ -21,7 +21,12 @@ def Jaccard(S_up,S_up2):
     jaccard =len(INT)/len(UNI)
     return jaccard
 
-data = pd.read_csv('./signature matching/911 drugs.txt')
+data1 = pd.read_csv('./signature matching/911 drugs_part0.csv')
+data2 = pd.read_csv('./signature matching/911 drugs_part1.csv')
+data3 = pd.read_csv('./signature matching/911 drugs_part2.csv')
+data4 = pd.read_csv('./signature matching/911 drugs_part3.csv')
+data = pd.concat([data1,data2,data3,data4])
+data.index=range(len(data))
 query =pd.read_csv('./signature matching/input signature.csv')
 gene = pd.read_csv('./signature matching/Transcribed_Gene_Metadata.txt',sep='\t')
 
